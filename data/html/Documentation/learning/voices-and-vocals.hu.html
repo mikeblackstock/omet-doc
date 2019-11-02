@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2012 a szerzők.
+
+Ezt a dokumentumot a GNU Free Documentation License (GNU Szabad
+Dokumentációs Licenc) 1.1-es vagy frissebb, a Free Software Foundation
+(Szabad Szoftver Alapítvány) által kiadott verziójának megfelelően
+lehet másolni, terjeszteni és/vagy módosítani, nem változtatható szakaszok nélkül.
+A licenc másolata a ,,GNU Free Documentation License" című függelékben
+található.
+
+ -->
+<!-- Created on március 17, 2014 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>LilyPond Tankönyv: 3.2.3 Szólamok és vokális zene</title>
+
+<meta name="description" content="LilyPond Tankönyv: 3.2.3 Szólamok és vokális zene">
+<meta name="keywords" content="LilyPond Tankönyv: 3.2.3 Szólamok és vokális zene">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.hu.html#index" rel="start" title="LilyPond &mdash; Tankönyv">
+<link href="lilypond-index.hu.html#lilypond-index" rel="index" title="C. LilyPond tárgymutató">
+<link href="index_toc.hu.html#SEC_Contents" rel="contents" title="Tartalomjegyzék">
+<link href="index_abt.hu.html#SEC_About" rel="help" title="A navigációs panel használata">
+<link href="voices-contain-music.hu.html#voices-contain-music" rel="up" title="3.2 A szólamok zenét tartalmaznak">
+<link href="lilypond-index.hu.html#lilypond-index" rel="next" title="C. LilyPond tárgymutató">
+<link href="explicitly-instantiating-voices.hu.html#explicitly-instantiating-voices" rel="previous" title="3.2.2 Szólamok kézi létrehozása">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="hu" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+
+<div id="main">
+<a name="Sz_00f3lamok-_00e9s-vok_00e1lis-zene"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="fundamental-concepts.hu.html" title="Fejezet eleje vagy előző fejezet"> &lt;&lt; Alapfogalmak&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.hu.html" title="Dokumentum címoldala" rel="start">Címoldal</a>][<a href="index_toc.hu.html#SEC_Contents" title="Tartalomjegyzék" rel="contents">Tartalom</a>][<a href="lilypond-index.hu.html" title="Tárgymutató" rel="index">Tárgymutató</a>][<a href="index_abt.hu.html#SEC_About" title="Segítség a navigációhoz" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="tweaking-output.hu.html" title="Következő fejezet">&nbsp;A kimenet finomhangolása &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="explicitly-instantiating-voices.hu.html" title="Előző szakasz az olvasási sorrendben" accesskey="p" rel="previous"> &lt; Szólamok kézi létrehozása&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="voices-contain-music.hu.html" title="Szülő szakasz" accesskey="u" rel="up">&nbsp;Fel:&nbsp;A szólamok zenét tartalmaznak&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="contexts-and-engravers.hu.html" title="Következő szakasz az olvasási sorrendben" accesskey="n" rel="next">&nbsp;Kontextusok és ábrázolók &gt; </a>]</td></tr></table>
+<a name="voices-and-vocals"></a>
+<h3 class="subsection">3.2.3 Szólamok és vokális zene</h3>
+
+<p>Vocal music presents a special difficulty: we need to combine two
+expressions &ndash; notes and lyrics.
+</p>
+<a name="index-_005cnew-Lyrics"></a>
+<a name="index-_005cnew-Lyrics-1"></a>
+<a name="index-_005clyricsto"></a>
+<a name="index-_005clyricsto-1"></a>
+<a name="index-lyricsto"></a>
+<a name="index-lyricsto-1"></a>
+<a name="index-Lyrics-2"></a>
+<a name="index-Lyrics-3"></a>
+<a name="index-Lyrics-context_002c-creating"></a>
+<a name="index-lyrics_002c-linking-to-voice"></a>
+
+<p>You have already seen the <code>\addlyrics{}</code> command, which
+handles simple scores well.  However, this technique is
+quite limited.  For more complex music, you must introduce the
+lyrics in a <code>Lyrics</code> context using <code>\new Lyrics</code> and
+explicitly link
+the lyrics to the notes with <code>\lyricsto{}</code>, using the
+name assigned to the Voice.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Voice = &quot;one&quot; \relative c'' {
+    \autoBeamOff
+    \time 2/4
+    c4 b8. a16 g4. f8 e4 d c2
+  }
+  \new Lyrics \lyricsto &quot;one&quot; {
+    No more let sins and sor -- rows grow.
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../99/lily-c9be8429.ly">
+  <img align="middle"
+       border="0"
+       src="../99/lily-c9be8429.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Note that the lyrics must be linked to a <code>Voice</code> context,
+<em>not</em> a <code>Staff</code> context.  This is a case where it is
+necessary to create <code>Staff</code> and <code>Voice</code> contexts
+explicitly.
+</p>
+<a name="index-lyrics-and-beaming"></a>
+<a name="index-beaming-and-lyrics"></a>
+<a name="index-_005cautoBeamOff-2"></a>
+<a name="index-_005cautoBeamOff-3"></a>
+<a name="index-autoBeamOff-2"></a>
+<a name="index-autoBeamOff-3"></a>
+
+<p>The automatic beaming which LilyPond uses by default works well
+for instrumental music, but not so well for music with lyrics,
+where beaming is either not required at all or is used to indicate
+melismata in the lyrics.  In the example above we use the command
+<code>\autoBeamOff</code> to turn off the automatic beaming.
+</p>
+<a name="index-_005cnew-ChoirStaff"></a>
+<a name="index-_005cnew-ChoirStaff-1"></a>
+<a name="index-ChoirStaff-2"></a>
+<a name="index-ChoirStaff-3"></a>
+<a name="index-_005clyricmode"></a>
+<a name="index-_005clyricmode-1"></a>
+<a name="index-lyricmode"></a>
+<a name="index-lyricmode-1"></a>
+<a name="index-vocal-score-structure"></a>
+<a name="index-choir-staff"></a>
+
+<p>Let us reuse the earlier example from Judas Maccabæus to
+illustrate this more flexible technique.  We first recast
+it to use variables so the music and lyrics can be separated
+from the staff structure.  We also introduce a ChoirStaff
+bracket.  The lyrics themselves must be introduced with
+<code>\lyricmode</code> to ensure they are interpreted as lyrics
+rather than music.
+</p>
+<blockquote><pre class="verbatim">global = { \time 6/8 \partial 8 \key f \major}
+SopOneMusic = \relative c'' {
+  c8 | c([ bes)] a a([ g)] f | f'4. b, | c4.~ c4 | }
+SopTwoMusic = \relative c' {
+  r8 | r4. r4 c8 | a'([ g)] f f([ e)] d | e([ d)] c bes' | }
+SopOneLyrics = \lyricmode {
+  Let | flee -- cy flocks the | hills a -- dorn, __ | }
+SopTwoLyrics = \lyricmode {
+  Let | flee -- cy flocks the | hills a -- dorn, | }
+
+\score {
+  \new ChoirStaff &lt;&lt;
+    \new Staff &lt;&lt;
+      \new Voice = &quot;SopOne&quot; {
+        \global
+        \SopOneMusic
+      }
+      \new Lyrics \lyricsto &quot;SopOne&quot; {
+        \SopOneLyrics
+      }
+    &gt;&gt;
+    \new Staff &lt;&lt;
+      \new Voice = &quot;SopTwo&quot; {
+        \global
+        \SopTwoMusic
+      }
+      \new Lyrics \lyricsto &quot;SopTwo&quot; {
+        \SopTwoLyrics
+      }
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../71/lily-eb88a706.ly">
+  <img align="middle"
+       border="0"
+       src="../71/lily-eb88a706.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>This is the basic structure of all vocal scores.  More staves may be
+added as required, more voices may be added to the staves, more verses
+may be added to the lyrics, and the variables containing the music can
+easily be placed in separate files should they become too long.
+</p>
+<a name="index-hymn-structure"></a>
+<a name="index-SATB-structure"></a>
+<a name="index-vocal-scores-with-multiple-verses"></a>
+<a name="index-multiple-vocal-verses"></a>
+<a name="index-verses_002c-multiple-vocal"></a>
+
+<p>Here is an example of the first line of a hymn with four
+verses, set for SATB.  In this case the words for all four
+parts are the same.  Note how we use variables to separate the
+music notation and words from the staff structure.  See too
+how a variable, which we have chosen to call &lsquo;TimeKey&rsquo;, is used
+to hold several commands for use within the two staves.  In other
+examples this is often called &lsquo;global&rsquo;.
+</p>
+<blockquote><pre class="verbatim">TimeKey = { \time 4/4 \partial 4 \key c \major}
+SopMusic   = \relative c' { c4 | e4. e8 g4  g  | a a g | }
+AltoMusic  = \relative c' { c4 | c4. c8 e4  e  | f f e | }
+TenorMusic = \relative c  { e4 | g4. g8 c4. b8 | a8 b c d e4 | }
+BassMusic  = \relative c  { c4 | c4. c8 c4  c  | f8 g a b c4 | }
+VerseOne   = \lyricmode {
+  E -- | ter -- nal fa -- ther, | strong to save, | }
+VerseTwo   = \lyricmode {
+  O | Christ, whose voice the | wa -- ters heard, | }
+VerseThree = \lyricmode {
+  O | Ho -- ly Spi -- rit, | who didst brood | }
+VerseFour  = \lyricmode {
+  O | Tri -- ni -- ty of | love and pow'r | }
+
+\score {
+  \new ChoirStaff &lt;&lt;
+    \new Staff &lt;&lt;
+      \clef &quot;treble&quot;
+      \new Voice = &quot;Sop&quot;  { \voiceOne \TimeKey \SopMusic }
+      \new Voice = &quot;Alto&quot; { \voiceTwo \AltoMusic }
+      \new Lyrics \lyricsto &quot;Sop&quot; { \VerseOne   }
+      \new Lyrics \lyricsto &quot;Sop&quot; { \VerseTwo   }
+      \new Lyrics \lyricsto &quot;Sop&quot; { \VerseThree }
+      \new Lyrics \lyricsto &quot;Sop&quot; { \VerseFour  }
+    &gt;&gt;
+    \new Staff &lt;&lt;
+      \clef &quot;bass&quot;
+      \new Voice = &quot;Tenor&quot; { \voiceOne \TimeKey \TenorMusic }
+      \new Voice = &quot;Bass&quot;  { \voiceTwo \BassMusic }
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../88/lily-ece240ec.ly">
+  <img align="middle"
+       border="0"
+       src="../88/lily-ece240ec.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-verse-and-refrain"></a>
+
+<p>We end with an example to show how we might code a solo verse which
+continues into a two-part refrain in two staves.  The positioning
+of the sequential and simultaneous sections to achieve this within
+a single score is quite tricky, so follow the explanation carefully!
+</p>
+<p>Let&rsquo;s start with a score block containing a <code>ChoirStaff</code>, as
+we would like the brace to appear at the start of the chorus.
+Normally you would need angle brackets after <code>\new ChoirStaff</code>
+to bring in all the staves in parallel, but here we want to
+defer the parallelism during the solo so we use braces, although
+angle brackets here wouldn&rsquo;t hurt.  Inside the <code>ChoirStaff</code> we
+want first the staff which will contain the verse.  This must
+contain notes and lyrics in parallel, so here we need angle
+brackets around the <code>\new Voice</code> and <code>\new Lyrics</code> to
+start them at the same time:
+</p>
+<blockquote><pre class="verbatim">versenotes = \relative c'' {
+  \clef &quot;treble&quot;
+  \key g \major
+  \time 3/4
+  g g g | b b b |
+}
+versewords = \lyricmode {
+  One two three four five six
+}
+\score {
+  \new ChoirStaff {
+    \new Staff &lt;&lt;
+      \new Voice = &quot;verse&quot; {
+        \versenotes \break
+      }
+      \new Lyrics \lyricsto verse {
+        \versewords
+      }
+    &gt;&gt;
+  }
+}
+</pre><p>
+ <a href="../38/lily-9c714e98.ly">
+  <img align="middle"
+       border="0"
+       src="../38/lily-9c714e98.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>That gives the verse line.
+</p>
+<p>Now we want to continue with refrainA on the same staff while a
+second staff is introduced in parallel with it for refrainB, so
+this is a parallel section which must be positioned immediately
+following the <code>\break</code> in the verse Voice.  Yes, <em>within</em>
+the verse Voice!  Here&rsquo;s that parallel section.  More staves
+could be introduced here in the same way.
+</p>
+<blockquote><pre class="example">&lt;&lt;
+  \refrainnotesA
+  \new Lyrics \lyricsto verse {
+    \refrainwordsA
+  }
+  \new Staff &lt;&lt;
+    \new Voice = &quot;refrainB&quot; {
+      \refrainnotesB
+    }
+    \new Lyrics \lyricsto &quot;refrainB&quot; {
+      \refrainwordsB
+    }
+  &gt;&gt;
+&gt;&gt;
+</pre></blockquote>
+
+<p>Here&rsquo;s the final result with two staves in the chorus showing
+how the parallel section is positioned within the verse Voice:
+</p>
+<blockquote><pre class="verbatim">versenotes = \relative c'' {
+  \clef &quot;treble&quot;
+  \key g \major
+  \time 3/4
+  g g g | b b b |
+}
+refrainnotesA = \relative c'' {
+  \time 2/4
+  c c | g g \bar &quot;|.&quot;
+}
+refrainnotesB = \relative c {
+  \clef &quot;bass&quot;
+  \key g \major
+  c e | d d |
+}
+versewords = \lyricmode {
+  One two three four five six
+}
+refrainwordsA = \lyricmode {
+  la la la la
+}
+refrainwordsB = \lyricmode {
+  dum dum dum dum
+}
+\score {
+  \new ChoirStaff {
+    \new Staff &lt;&lt;
+      \new Voice = &quot;verse&quot; {
+        \versenotes \break
+        &lt;&lt;
+          \refrainnotesA
+          \new Lyrics \lyricsto &quot;verse&quot; {
+            \refrainwordsA
+          }
+          \new Staff &lt;&lt;
+            \new Voice = &quot;refrainB&quot; {
+              \refrainnotesB
+            }
+            \new Lyrics \lyricsto &quot;refrainB&quot; {
+              \refrainwordsB
+            }
+          &gt;&gt;
+        &gt;&gt;
+      }
+      \new Lyrics \lyricsto &quot;verse&quot; {
+        \versewords
+      }
+    &gt;&gt;
+  }
+}
+</pre><p>
+ <a href="../9e/lily-a50c71a7.ly">
+  <img align="middle"
+       border="0"
+       src="../9e/lily-a50c71a7.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-book_002c-example-of-using"></a>
+<a name="index-_005cbook-4"></a>
+<a name="index-_005cbook-5"></a>
+<a name="index-book-5"></a>
+<a name="index-book-6"></a>
+
+<p>However, although this is an interesting and useful exercise to
+help you to understand how sequential and simultaneous blocks work,
+in practice one would perhaps choose to code this as two
+<code>\score</code> blocks within an implicit <code>\book</code> block, as
+follows:
+</p>
+<blockquote><pre class="verbatim">versenotes = \relative c'' {
+  \clef &quot;treble&quot;
+  \key g \major
+  \time 3/4
+  g g g | b b b |
+}
+refrainnotesA = \relative c'' {
+  \time 2/4
+  c c | g g \bar &quot;|.&quot;
+}
+refrainnotesB = \relative c {
+  \clef &quot;bass&quot;
+  \key g \major
+  c e | d d |
+}
+versewords = \lyricmode {
+  One two three four five six
+}
+refrainwordsA = \lyricmode {
+  la la la la
+}
+refrainwordsB = \lyricmode {
+  dum dum dum dum
+}
+\score {
+  \new Staff &lt;&lt;
+    \new Voice = &quot;verse&quot; {
+      \versenotes
+    }
+    \new Lyrics \lyricsto &quot;verse&quot; {
+      \versewords
+    }
+  &gt;&gt;
+}
+
+\score {
+  \new ChoirStaff &lt;&lt;
+    \new Staff &lt;&lt;
+      \new Voice = &quot;refrainA&quot; {
+        \refrainnotesA
+      }
+      \new Lyrics \lyricsto &quot;refrainA&quot; {
+        \refrainwordsA
+      }
+    &gt;&gt;
+    \new Staff &lt;&lt;
+      \new Voice = &quot;refrainB&quot; {
+        \refrainnotesB
+      }
+      \new Lyrics \lyricsto &quot;refrainB&quot; {
+        \refrainwordsB
+      }
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../1e/lily-c7ef0d2f.ly">
+  <img align="middle"
+       border="0"
+       src="../1e/lily-c7ef0d2f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Lasd-meg-8"></a>
+<h4 class="subsubheading">Lásd még</h4>
+<p>Notation Reference: <a name="index-Vocal-music-2"></a>
+<a href="../notation/vocal-music.hu.html">Vocal music</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="fundamental-concepts.hu.html" title="Fejezet eleje vagy előző fejezet"> &lt;&lt; Alapfogalmak&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.hu.html" title="Dokumentum címoldala" rel="start">Címoldal</a>][<a href="index_toc.hu.html#SEC_Contents" title="Tartalomjegyzék" rel="contents">Tartalom</a>][<a href="lilypond-index.hu.html" title="Tárgymutató" rel="index">Tárgymutató</a>][<a href="index_abt.hu.html#SEC_About" title="Segítség a navigációhoz" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="tweaking-output.hu.html" title="Következő fejezet">&nbsp;A kimenet finomhangolása &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="explicitly-instantiating-voices.hu.html" title="Előző szakasz az olvasási sorrendben" accesskey="p" rel="previous"> &lt; Szólamok kézi létrehozása&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="voices-contain-music.hu.html" title="Szülő szakasz" accesskey="u" rel="up">&nbsp;Fel:&nbsp;A szólamok zenét tartalmaznak&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="contexts-and-engravers.hu.html" title="Következő szakasz az olvasási sorrendben" accesskey="n" rel="next">&nbsp;Kontextusok és ábrázolók &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-stable-2.18/scripts/build/out/www_post -->
+<p class="footer_version">
+This page is for LilyPond-2.18.2 (stable-branch).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-stable-2.18/scripts/build/out/www_post -->
+ Más nyelvek: <a href="voices-and-vocals.html">English</a>, <a href="voices-and-vocals.cs.html">česky</a>, <a href="voices-and-vocals.de.html">deutsch</a>, <a href="voices-and-vocals.es.html">español</a>, <a href="voices-and-vocals.fr.html">français</a>, <a href="voices-and-vocals.it.html">italiano</a>, <a href="voices-and-vocals.ja.html">日本語</a>, <a href="voices-and-vocals.nl.html">nederlands</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.hu.html"
+         title="Documentation Index">&lt;&lt; Vissza a dokumentációk jegyzékéhez</a></p>
+<h4 class="toc_header"> <a href="index.hu.html" title="Start of the manual">LilyPond &mdash; Tankönyv  v2.18.2 (stable-branch). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Elso-lecke" href="tutorial.hu.html">1. Első lecke</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Fajlok-forditasa" href="compiling-a-file.hu.html">1.1 Fájlok fordítása</a>    </li>
+    <li class=""><a name="toc-Bemeneti-fajlok-irasa" href="how-to-write-input-files.hu.html">1.2 Bemeneti fájlok írása</a>    </li>
+    <li class=""><a name="toc-Hogyan-olvassuk-a-dokumentaciot_003f" href="how-to-read-the-manuals.hu.html">1.3 Hogyan olvassuk a dokumentációt?</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Elemi-kottairas" href="common-notation.hu.html">2. Elemi kottaírás</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Egyszolamu-lejegyzes" href="single-staff-notation.hu.html">2.1 Egyszólamú lejegyzés</a>    </li>
+    <li class=""><a name="toc-Tobb-hang-egyszerre" href="multiple-notes-at-once.hu.html">2.2 Több hang egyszerre</a>    </li>
+    <li class=""><a name="toc-Dalok-1" href="songs.hu.html">2.3 Dalok</a>    </li>
+    <li class=""><a name="toc-Utolso-simitasok" href="final-touches.hu.html">2.4 Utolsó simítások</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Alapfogalmak-1" href="fundamental-concepts.hu.html">3. Alapfogalmak</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Hogyan-mukodnek-a-LilyPond-bemeneti-fajlok_003f" href="how-lilypond-input-files-work.hu.html">3.1 Hogyan működnek a LilyPond bemeneti fájlok?</a>    </li>
+    <li class=" toc_current"><a name="toc-A-szolamok-zenet-tartalmaznak" href="voices-contain-music.hu.html">3.2 A szólamok zenét tartalmaznak</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Hangzatos-szolamok" href="i_0027m-hearing-voices.hu.html">3.2.1 Hangzatos szólamok</a>      </li>
+      <li class=""><a name="toc-Szolamok-kezi-letrehozasa" href="explicitly-instantiating-voices.hu.html">3.2.2 Szólamok kézi létrehozása</a>      </li>
+      <li class=" toc_current"><a name="toc-Szolamok-es-vokalis-zene" href="voices-and-vocals.hu.html">3.2.3 Szólamok és vokális zene</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Kontextusok-es-abrazolok" href="contexts-and-engravers.hu.html">3.3 Kontextusok és ábrázolók</a>    </li>
+    <li class=""><a name="toc-A-sablonok-kibovitese" href="extending-the-templates.hu.html">3.4 A sablonok kibővítése</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-A-kimenet-finomhangolasa" href="tweaking-output.hu.html">4. A kimenet finomhangolása</a>
+  <ul class="toc">
+    <li class=""><a name="toc-A-finomhangolas-alapjai" href="tweaking-basics.hu.html">4.1 A finomhangolás alapjai</a>    </li>
+    <li class=""><a name="toc-A-belso-mukodes-referenciaja" href="the-internals-reference-manual.hu.html">4.2 A belső működés referenciája</a>    </li>
+    <li class=""><a name="toc-Objektumok-megjelenese" href="appearance-of-objects.hu.html">4.3 Objektumok megjelenése</a>    </li>
+    <li class=""><a name="toc-Objektumok-elhelyezese" href="placement-of-objects.hu.html">4.4 Objektumok elhelyezése</a>    </li>
+    <li class=""><a name="toc-Objektumok-utkozese" href="collisions-of-objects.hu.html">4.5 Objektumok ütközése</a>    </li>
+    <li class=""><a name="toc-Tovabbi-finomhangolas" href="further-tweaking.hu.html">4.6 További finomhangolás</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Sablonok-1" href="templates.hu.html">A. Sablonok</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Egy-kottasor-1" href="single-staff.hu.html">A.1 Egy kottasor</a>    </li>
+    <li class=""><a name="toc-Zongorasablonok-1" href="piano-templates.hu.html">A.2 Zongorasablonok</a>    </li>
+    <li class=""><a name="toc-Vonosnegyes-1" href="von_00c3_00b3sn_00c3_00a9gyes.hu.html">A.3 Vonósnégyes</a>    </li>
+    <li class=""><a name="toc-Korus" href="vocal-ensembles.hu.html">A.4 Kórus</a>    </li>
+    <li class=""><a name="toc-Zenekari-sablonok-1" href="orchestral-templates.hu.html">A.5 Zenekari sablonok</a>    </li>
+    <li class=""><a name="toc-Sablonok-regizenehez" href="ancient-notation-templates.hu.html">A.6 Sablonok régizenéhez</a>    </li>
+    <li class=""><a name="toc-Egyeb-sablonok" href="other-templates.hu.html">A.7 Egyéb sablonok</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.hu.html">B. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-LilyPond-targymutato" href="lilypond-index.hu.html">C. LilyPond tárgymutató</a>  </li>
+<li>
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.18 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.18 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.18 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Google keresés">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Keresés">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,13 +1,14 @@
 {
   "type": "application",
-  "name": "MyApplication",
+  "name": "DocViewer",
   "category": "development",
   "server": null,
+  "singleton": true,
   "title": {
-    "en_EN": "MyApplication"
+    "en_EN": "DocViewer"
   },
   "description": {
-    "en_EN": "MyApplication"
+    "en_EN": "DocViewer"
   },
   "files": [
     "main.js"

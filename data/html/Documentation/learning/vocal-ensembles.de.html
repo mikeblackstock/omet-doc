@@ -1,0 +1,940 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2012 bei den Autoren.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+Die Übersetzung der folgenden Lizenzanmerkung ist zur Orientierung
+für Leser, die nicht Englisch sprechen. Im rechtlichen Sinne ist aber
+nur die englische Version gültig.
+
+Es ist erlaubt, dieses Dokument unter den Bedingungen der
+GNU Free Documentation Lizenz (Version 1.1 oder
+spätere, von der Free Software Foundation publizierte Versionen, ohne
+invariante Abschnitte),
+zu kopieren, zu verbreiten und/oder
+zu verändern. Eine Kopie der Lizenz ist im Abschnitt "GNU
+Free Documentation License" angefügt.
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on 17. M&auml;rz 2014 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>LilyPond Handbuch zum Lernen: A.4 Vokalensemble</title>
+
+<meta name="description" content="LilyPond Handbuch zum Lernen: A.4 Vokalensemble">
+<meta name="keywords" content="LilyPond Handbuch zum Lernen: A.4 Vokalensemble">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.de.html#index" rel="start" title="LilyPond &ndash; Learning Manual">
+<link href="lilypond-index.de.html#lilypond-index" rel="index" title="C. LilyPond-Index">
+<link href="index_toc.de.html#SEC_Contents" rel="contents" title="Inhaltsverzeichnis">
+<link href="index_abt.de.html#SEC_About" rel="help" title="&Uuml;ber dieses Dokument">
+<link href="templates.de.html#templates" rel="up" title="A. Vorlagen">
+<link href="lilypond-index.de.html#lilypond-index" rel="next" title="C. LilyPond-Index">
+<link href="string-quartet.de.html#string-quartet" rel="previous" title="A.3 Streichquartett">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="de" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+
+<div id="main">
+<a name="Vokalensemble"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="string-quartet.de.html" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; &nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="templates.de.html" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vorlagen&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#vocal-ensembles" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp; &gt; </a>]</td></tr></table>
+<a name="vocal-ensembles"></a>
+<h2 class="appendixsec">A.4 Vokalensemble</h2>
+
+<hr size="6">
+<a name="vocal-ensembles"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#vocal-ensembles" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; Vokalensemble&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#vocal-ensembles" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vokalensemble&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#vocal-ensembles" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp; &gt; </a>]</td></tr></table>
+<h3 class="appendixsubsec">A.4.1 SATB-Partitur</h3>
+
+
+<p>Dieses Beispiel ist für vierstimmigen Gesang (SATB). Bei größeren
+Stücken ist es oft sinnvoll, eine allgemeine Variable zu bestimmen,
+die in allen Stimmen eingefügt wird. Taktart und Vorzeichen etwa
+sind fast immer gleich in allen Stimmen.
+</p>
+<blockquote><pre class="verbatim">\paper {
+  top-system-spacing #'basic-distance = #10
+  score-system-spacing #'basic-distance = #20
+  system-system-spacing #'basic-distance = #20
+  last-bottom-spacing #'basic-distance = #10
+}
+
+global = {
+  \key c \major
+  \time 4/4
+}
+
+sopMusic = \relative c'' {
+  c4 c c8[( b)] c4
+}
+sopWords = \lyricmode {
+  hi hi hi hi
+}
+
+altoMusic = \relative c' {
+  e4 f d e
+}
+altoWords = \lyricmode {
+  ha ha ha ha
+}
+
+tenorMusic = \relative c' {
+  g4 a f g
+}
+tenorWords = \lyricmode {
+  hu hu hu hu
+}
+
+bassMusic = \relative c {
+  c4 c g c
+}
+bassWords = \lyricmode {
+  ho ho ho ho
+}
+
+\score {
+  \new ChoirStaff &lt;&lt;
+    \new Lyrics = &quot;sopranos&quot; \with {
+      % this is needed for lyrics above a staff
+      \override VerticalAxisGroup.staff-affinity = #DOWN
+    }
+    \new Staff = &quot;women&quot; &lt;&lt;
+      \new Voice = &quot;sopranos&quot; {
+        \voiceOne
+        &lt;&lt; \global \sopMusic &gt;&gt;
+      }
+      \new Voice = &quot;altos&quot; {
+        \voiceTwo
+        &lt;&lt; \global \altoMusic &gt;&gt;
+      }
+    &gt;&gt;
+    \new Lyrics = &quot;altos&quot;
+    \new Lyrics = &quot;tenors&quot; \with {
+      % this is needed for lyrics above a staff
+      \override VerticalAxisGroup.staff-affinity = #DOWN
+    }
+    \new Staff = &quot;men&quot; &lt;&lt;
+      \clef bass
+      \new Voice = &quot;tenors&quot; {
+        \voiceOne
+        &lt;&lt; \global \tenorMusic &gt;&gt;
+      }
+      \new Voice = &quot;basses&quot; {
+        \voiceTwo &lt;&lt; \global \bassMusic &gt;&gt;
+      }
+    &gt;&gt;
+    \new Lyrics = &quot;basses&quot;
+    \context Lyrics = &quot;sopranos&quot; \lyricsto &quot;sopranos&quot; \sopWords
+    \context Lyrics = &quot;altos&quot; \lyricsto &quot;altos&quot; \altoWords
+    \context Lyrics = &quot;tenors&quot; \lyricsto &quot;tenors&quot; \tenorWords
+    \context Lyrics = &quot;basses&quot; \lyricsto &quot;basses&quot; \bassWords
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../fe/lily-4321c150.ly">
+  <img align="middle"
+       border="0"
+       src="../fe/lily-4321c150.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="vocal-ensembles"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#vocal-ensembles" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; &nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#vocal-ensembles" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vokalensemble&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#vocal-ensembles" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp; &gt; </a>]</td></tr></table>
+<h3 class="appendixsubsec">A.4.2 SATB-Partitur und automatischer Klavierauszug</h3>
+
+
+<p>In diesem Beispiel wird ein automatischer Klavierauszug zu der
+Chorpartitur hinzugefügt. Das zeigt eine der Stärken von LilyPond
+&ndash; man kann eine Variable mehr als einmal benutzen. Wenn Sie
+irgendeine Änderung an einer Chorstimme vornehmen, (etwa
+tenorMusic), verändert sich auch der Klavierauszug entsprechend.
+</p>
+<blockquote><pre class="verbatim">\paper {
+  top-system-spacing #'basic-distance = #10
+  score-system-spacing #'basic-distance = #20
+  system-system-spacing #'basic-distance = #20
+  last-bottom-spacing #'basic-distance = #10
+}
+
+global = {
+  \key c \major
+  \time 4/4
+}
+
+sopMusic = \relative c'' {
+  c4 c c8[( b)] c4
+}
+sopWords = \lyricmode {
+  hi hi hi hi
+}
+
+altoMusic = \relative c' {
+  e4 f d e
+}
+altoWords =\lyricmode {
+  ha ha ha ha
+}
+
+tenorMusic = \relative c' {
+  g4 a f g
+}
+tenorWords = \lyricmode {
+  hu hu hu hu
+}
+
+bassMusic = \relative c {
+  c4 c g c
+}
+bassWords = \lyricmode {
+  ho ho ho ho
+}
+
+\score {
+  &lt;&lt;
+    \new ChoirStaff &lt;&lt;
+      \new Lyrics = &quot;sopranos&quot; \with {
+        % This is needed for lyrics above a staff
+        \override VerticalAxisGroup.staff-affinity = #DOWN
+      }
+      \new Staff = &quot;women&quot; &lt;&lt;
+        \new Voice = &quot;sopranos&quot; { \voiceOne &lt;&lt; \global \sopMusic &gt;&gt; }
+        \new Voice = &quot;altos&quot; { \voiceTwo &lt;&lt; \global \altoMusic &gt;&gt; }
+      &gt;&gt;
+      \new Lyrics = &quot;altos&quot;
+      \new Lyrics = &quot;tenors&quot; \with {
+        % This is needed for lyrics above a staff
+        \override VerticalAxisGroup.staff-affinity = #DOWN
+      }
+
+      \new Staff = &quot;men&quot; &lt;&lt;
+        \clef bass
+        \new Voice = &quot;tenors&quot; { \voiceOne &lt;&lt; \global \tenorMusic &gt;&gt; }
+        \new Voice = &quot;basses&quot; { \voiceTwo &lt;&lt; \global \bassMusic &gt;&gt; }
+      &gt;&gt;
+      \new Lyrics = &quot;basses&quot;
+      \context Lyrics = &quot;sopranos&quot; \lyricsto &quot;sopranos&quot; \sopWords
+      \context Lyrics = &quot;altos&quot; \lyricsto &quot;altos&quot; \altoWords
+      \context Lyrics = &quot;tenors&quot; \lyricsto &quot;tenors&quot; \tenorWords
+      \context Lyrics = &quot;basses&quot; \lyricsto &quot;basses&quot; \bassWords
+    &gt;&gt;
+    \new PianoStaff &lt;&lt;
+      \new Staff &lt;&lt;
+        \set Staff.printPartCombineTexts = ##f
+        \partcombine
+        &lt;&lt; \global \sopMusic &gt;&gt;
+        &lt;&lt; \global \altoMusic &gt;&gt;
+      &gt;&gt;
+      \new Staff &lt;&lt;
+        \clef bass
+        \set Staff.printPartCombineTexts = ##f
+        \partcombine
+        &lt;&lt; \global \tenorMusic &gt;&gt;
+        &lt;&lt; \global \bassMusic &gt;&gt;
+      &gt;&gt;
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../6b/lily-933c455f.ly">
+  <img align="middle"
+       border="0"
+       src="../6b/lily-933c455f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="vocal-ensembles"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#vocal-ensembles" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; &nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#vocal-ensembles" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vokalensemble&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#vocal-ensembles" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp; &gt; </a>]</td></tr></table>
+<h3 class="appendixsubsec">A.4.3 SATB mit daran ausgerichteten Kontexten</h3>
+
+
+<p>In diesem Beispiel werden die Texte mit den Befehlen
+<code>alignAboveContext</code> und <code>alignBelowContext</code>
+über und unter dem System angeordnet.
+</p>
+<blockquote><pre class="verbatim">global = {
+  \key c \major
+  \time 4/4
+}
+
+sopMusic = \relative c'' {
+  c4 c c8[( b)] c4
+}
+sopWords = \lyricmode {
+  hi hi hi hi
+}
+
+altoMusic = \relative c' {
+  e4 f d e
+}
+altoWords = \lyricmode {
+  ha ha ha ha
+}
+
+tenorMusic = \relative c' {
+  g4 a f g
+}
+tenorWords = \lyricmode {
+  hu hu hu hu
+}
+
+bassMusic = \relative c {
+  c4 c g c
+}
+bassWords = \lyricmode {
+  ho ho ho ho
+}
+
+\score {
+  \new ChoirStaff &lt;&lt;
+    \new Staff = &quot;women&quot; &lt;&lt;
+      \new Voice = &quot;sopranos&quot; { \voiceOne &lt;&lt; \global \sopMusic &gt;&gt; }
+      \new Voice = &quot;altos&quot; { \voiceTwo &lt;&lt; \global \altoMusic &gt;&gt; }
+    &gt;&gt;
+    \new Lyrics \with { alignAboveContext = #&quot;women&quot; }
+      \lyricsto &quot;sopranos&quot; \sopWords
+    \new Lyrics \with { alignBelowContext = #&quot;women&quot; }
+      \lyricsto &quot;altos&quot; \altoWords
+    % we could remove the line about this with the line below, since
+    % we want the alto lyrics to be below the alto Voice anyway.
+    % \new Lyrics \lyricsto &quot;altos&quot; \altoWords
+
+    \new Staff = &quot;men&quot; &lt;&lt;
+      \clef bass
+      \new Voice = &quot;tenors&quot; { \voiceOne &lt;&lt; \global \tenorMusic &gt;&gt; }
+      \new Voice = &quot;basses&quot; { \voiceTwo &lt;&lt; \global \bassMusic &gt;&gt; }
+    &gt;&gt;
+    \new Lyrics \with { alignAboveContext = #&quot;men&quot; }
+      \lyricsto &quot;tenors&quot; \tenorWords
+    \new Lyrics \with { alignBelowContext = #&quot;men&quot; }
+      \lyricsto &quot;basses&quot; \bassWords
+    % again, we could replace the line above this with the line below.
+    % \new Lyrics \lyricsto &quot;basses&quot; \bassWords
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../df/lily-b75d24b4.ly">
+  <img align="middle"
+       border="0"
+       src="../df/lily-b75d24b4.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="vocal-ensembles"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#vocal-ensembles" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; &nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#vocal-ensembles" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vokalensemble&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#vocal-ensembles" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp; &gt; </a>]</td></tr></table>
+<h3 class="appendixsubsec">A.4.4 SATB auf vier Systemen</h3>
+
+
+<p>SATB-Chorvorlage auf vier Systemen
+</p>
+
+<blockquote><pre class="verbatim">global = {
+  \key c \major
+  \time 4/4
+  \dynamicUp
+}
+sopranonotes = \relative c'' {
+  c2 \p \&lt; d c d \f
+}
+sopranowords = \lyricmode { do do do do }
+altonotes = \relative c'' {
+  c2\p d c d
+}
+altowords = \lyricmode { re re re re }
+tenornotes = {
+  \clef &quot;G_8&quot;
+  c2\mp d c d
+}
+tenorwords = \lyricmode { mi mi mi mi }
+bassnotes = {
+  \clef bass
+  c2\mf d c d
+}
+basswords = \lyricmode { mi mi mi mi }
+
+\score {
+  \new ChoirStaff &lt;&lt;
+    \new Staff &lt;&lt;
+      \new Voice = &quot;soprano&quot; &lt;&lt;
+        \global
+        \sopranonotes
+      &gt;&gt;
+      \lyricsto &quot;soprano&quot; \new Lyrics \sopranowords
+    &gt;&gt;
+    \new Staff &lt;&lt;
+      \new Voice = &quot;alto&quot; &lt;&lt;
+        \global
+        \altonotes
+      &gt;&gt;
+      \lyricsto &quot;alto&quot; \new Lyrics \altowords
+    &gt;&gt;
+    \new Staff &lt;&lt;
+      \new Voice = &quot;tenor&quot; &lt;&lt;
+        \global
+        \tenornotes
+      &gt;&gt;
+      \lyricsto &quot;tenor&quot; \new Lyrics \tenorwords
+    &gt;&gt;
+    \new Staff &lt;&lt;
+      \new Voice = &quot;bass&quot; &lt;&lt;
+        \global
+        \bassnotes
+      &gt;&gt;
+      \lyricsto &quot;bass&quot; \new Lyrics \basswords
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../d6/lily-98f148f4.ly">
+  <img align="middle"
+       border="0"
+       src="../d6/lily-98f148f4.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="vocal-ensembles"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#vocal-ensembles" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; &nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#vocal-ensembles" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vokalensemble&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#vocal-ensembles" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp; &gt; </a>]</td></tr></table>
+<h3 class="appendixsubsec">A.4.5 Sologesang und zweistimmiger Refrain</h3>
+
+
+<p>Diese Vorlage erstellt eine Partitur, die mit Sologesang beginnt und einen
+Refrain für zwei Stimmen enthält.  Sie zeigt auch die Benutzung von
+Platzhalter-Pausen innerhalb der <code>\global</code>-Variable, um Taktwechsel
+(und andere Elemente, die für alle Stimmen gleich sind) für das gesamte
+Stück zu definieren.
+</p>
+
+<blockquote><pre class="verbatim">global = {
+  \key g \major
+
+  % verse
+  \time 3/4
+  s2.*2
+  \break
+
+  % refrain
+  \time 2/4
+  s2*2
+  \bar &quot;|.&quot;
+}
+
+SoloNotes = \relative g' {
+  \clef &quot;treble&quot;
+
+  % verse
+  g4 g g |
+  b4 b b |
+
+  % refrain
+  R2*2 |
+}
+
+SoloLyrics = \lyricmode {
+  One two three |
+  four five six |
+}
+
+SopranoNotes = \relative c'' {
+  \clef &quot;treble&quot;
+
+  % verse
+  R2.*2 |
+
+  % refrain
+  c4 c |
+  g4 g |
+}
+
+SopranoLyrics = \lyricmode {
+  la la |
+  la la |
+}
+
+BassNotes = \relative c {
+  \clef &quot;bass&quot;
+
+  % verse
+  R2.*2 |
+
+  % refrain
+  c4 e |
+  d4 d |
+}
+
+BassLyrics = \lyricmode {
+  dum dum |
+  dum dum |
+}
+
+\score {
+  &lt;&lt;
+    \new Voice = &quot;SoloVoice&quot; &lt;&lt; \global \SoloNotes &gt;&gt;
+    \new Lyrics \lyricsto &quot;SoloVoice&quot; \SoloLyrics
+
+    \new ChoirStaff &lt;&lt;
+      \new Voice = &quot;SopranoVoice&quot; &lt;&lt; \global \SopranoNotes &gt;&gt;
+      \new Lyrics \lyricsto &quot;SopranoVoice&quot; \SopranoLyrics
+
+      \new Voice = &quot;BassVoice&quot; &lt;&lt; \global \BassNotes &gt;&gt;
+      \new Lyrics \lyricsto &quot;BassVoice&quot; \BassLyrics
+    &gt;&gt;
+  &gt;&gt;
+  \layout {
+    ragged-right = ##t
+    \context { \Staff
+      % these lines prevent empty staves from being printed
+      \RemoveEmptyStaves
+      \override VerticalAxisGroup.remove-first = ##t
+    }
+  }
+}
+</pre><p>
+ <a href="../07/lily-8e14786d.ly">
+  <img align="middle"
+       border="0"
+       src="../07/lily-8e14786d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="vocal-ensembles"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#vocal-ensembles" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; &nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#vocal-ensembles" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vokalensemble&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#vocal-ensembles" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp; &gt; </a>]</td></tr></table>
+<h3 class="appendixsubsec">A.4.6 Hymnen</h3>
+
+
+<p>Dieses Beispiel zeigt eine Möglichkeit, eine Hymnusmelodie zu setzen, in
+der jede Zeiel mit einem Auftakt beginnt und einem unvollständigen
+Takt abschließt.  Es zeigt auch, wie man die Strophen als allein stehenden
+Text unter die Noten hinzufügt.
+</p>
+
+<blockquote><pre class="verbatim">Timeline = {
+  \time 4/4
+  \tempo 4=96
+  \partial 2
+  s2 | s1 | s2 \breathe s2 | s1 | s2 \bar &quot;||&quot; \break
+  s2 | s1 | s2 \breathe s2 | s1 | s2 \bar &quot;||&quot;
+}
+
+SopranoMusic = \relative g' {
+  g4 g | g g g g | g g g g | g g g g | g2
+  g4 g | g g g g | g g g g | g g g g | g2
+}
+
+AltoMusic = \relative c' {
+  d4 d | d d d d | d d d d | d d d d | d2
+  d4 d | d d d d | d d d d | d d d d | d2
+}
+
+TenorMusic = \relative a {
+  b4 b | b b b b | b b b b | b b b b | b2
+  b4 b | b b b b | b b b b | b b b b | b2
+}
+
+BassMusic =  \relative g {
+  g4 g | g g g g | g g g g | g g g g | g2
+  g4 g | g g g g | g g g g | g g g g | g2
+}
+
+global = {
+ \key g \major
+}
+
+\score {  % Start score
+  &lt;&lt;
+    \new PianoStaff &lt;&lt;  % Start pianostaff
+      \new Staff &lt;&lt;  % Start Staff = RH
+        \global
+        \clef &quot;treble&quot;
+        \new Voice = &quot;Soprano&quot; &lt;&lt;  % Start Voice = &quot;Soprano&quot;
+          \Timeline
+          \voiceOne
+          \SopranoMusic
+        &gt;&gt;  % End Voice = &quot;Soprano&quot;
+        \new Voice = &quot;Alto&quot; &lt;&lt;  % Start Voice = &quot;Alto&quot;
+          \Timeline
+          \voiceTwo
+          \AltoMusic
+        &gt;&gt;  % End Voice = &quot;Alto&quot;
+      &gt;&gt;  % End Staff = RH
+      \new Staff &lt;&lt;  % Start Staff = LH
+        \global
+        \clef &quot;bass&quot;
+        \new Voice = &quot;Tenor&quot; &lt;&lt;  % Start Voice = &quot;Tenor&quot;
+          \Timeline
+          \voiceOne
+          \TenorMusic
+        &gt;&gt;  % End Voice = &quot;Tenor&quot;
+        \new Voice = &quot;Bass&quot; &lt;&lt;  % Start Voice = &quot;Bass&quot;
+          \Timeline
+          \voiceTwo
+          \BassMusic
+        &gt;&gt;  % End Voice = &quot;Bass&quot;
+      &gt;&gt;  % End Staff = LH
+    &gt;&gt;  % End pianostaff
+  &gt;&gt;
+}  % End score
+
+\markup {
+  \fill-line {
+    &quot;&quot;
+    {
+      \column {
+        \left-align {
+          &quot;This is line one of the first verse&quot;
+          &quot;This is line two of the same&quot;
+          &quot;And here's line three of the first verse&quot;
+          &quot;And the last line of the same&quot;
+        }
+      }
+    }
+    &quot;&quot;
+  }
+}
+
+\paper {  % Start paper block
+  indent = 0     % don't indent first system
+  line-width = 130   % shorten line length to suit music
+}  % End paper block
+</pre><p>
+ <a href="../5e/lily-dc380a9a.ly">
+  <img align="middle"
+       border="0"
+       src="../5e/lily-dc380a9a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="vocal-ensembles"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#vocal-ensembles" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; &nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#vocal-ensembles" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vokalensemble&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="orchestral-templates.de.html" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp;Orchestervorlage &gt; </a>]</td></tr></table>
+<h3 class="appendixsubsec">A.4.7 Psalmengesang</h3>
+
+
+<p>Diese Vorlage zeigt eine Art, anglikanische Psalmengesänge zu setzen.  Hier
+wird auch gezeigt, wie Strophen als einfacher Text unter den Noten hinzugefügt
+werden können.  Zwei Strophen sind in unterschiedlicher Weise notiert um mehr
+Möglichkeiten darzustellen.
+</p>
+<blockquote><pre class="verbatim">SopranoMusic = \relative g' {
+  g1 | c2 b | a1 | \bar &quot;||&quot;
+  a1 | d2 c | c b | c1 | \bar &quot;||&quot;
+}
+
+AltoMusic = \relative c' {
+  e1 | g2 g | f1 |
+  f1 | f2 e | d d | e1 |
+}
+
+TenorMusic = \relative a {
+  c1 | c2 c | c1 |
+  d1 | g,2 g | g g | g1 |
+}
+
+BassMusic =  \relative c {
+  c1 | e2 e | f1 |
+  d1 | b2 c | g' g | c,1 |
+}
+
+global = {
+  \time 2/2
+}
+
+dot = \markup {
+  \raise #0.7 \musicglyph #&quot;dots.dot&quot;
+}
+
+tick = \markup {
+  \raise #1 \fontsize #-5 \musicglyph #&quot;scripts.rvarcomma&quot;
+}
+
+% Use markup to center the chant on the page
+\markup {
+  \fill-line {
+    \score {  % centered
+      &lt;&lt;
+        \new ChoirStaff &lt;&lt;
+          \new Staff &lt;&lt;
+            \global
+            \clef &quot;treble&quot;
+            \new Voice = &quot;Soprano&quot; &lt;&lt;
+              \voiceOne
+              \SopranoMusic
+            &gt;&gt;
+            \new Voice = &quot;Alto&quot; &lt;&lt;
+              \voiceTwo
+              \AltoMusic
+            &gt;&gt;
+          &gt;&gt;
+          \new Staff &lt;&lt;
+            \clef &quot;bass&quot;
+            \global
+            \new Voice = &quot;Tenor&quot; &lt;&lt;
+              \voiceOne
+              \TenorMusic
+            &gt;&gt;
+            \new Voice = &quot;Bass&quot; &lt;&lt;
+              \voiceTwo
+              \BassMusic
+            &gt;&gt;
+          &gt;&gt;
+        &gt;&gt;
+      &gt;&gt;
+      \layout {
+        \context {
+          \Score
+          \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/2)
+        }
+        \context {
+          \Staff
+          \remove &quot;Time_signature_engraver&quot;
+        }
+      }
+    }  % End score
+  }
+}  % End markup
+
+\markup {
+  \fill-line {
+    \column {
+      \left-align {
+        \null \null \null
+        \line {
+          \fontsize #5 O
+          \fontsize #3 come
+          let us \bold sing | unto \dot the | Lord : let
+        }
+        \line {
+          us heartily
+          \concat { re \bold joice }
+          in the | strength of | our
+        }
+        \line {
+          sal | vation.
+        }
+        \null
+        \line {
+          \hspace #2.5 8. Today if ye will hear his voice *
+        }
+        \line {
+          \concat { \bold hard en }
+          \tick not your \tick hearts : as in the pro-
+        }
+        \line {
+          vocation * and as in the \bold day of tempt- \tick
+        }
+        \line {
+          -ation \tick in the \tick wilderness.
+        }
+      }
+    }
+  }
+}
+</pre><p>
+ <a href="../d2/lily-6ccf5efa.ly">
+  <img align="middle"
+       border="0"
+       src="../d2/lily-6ccf5efa.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="templates.de.html" title="Anfang dieses oder des letzten Kapitels"> &lt;&lt; Vorlagen&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.de.html" title="Titelseite des Dokuments" rel="start">Anfang</a>][<a href="index_toc.de.html#SEC_Contents" title="Inhaltsverzeichnis" rel="contents">Inhalt</a>][<a href="lilypond-index.de.html" title="Index" rel="index">Index</a>][<a href="index_abt.de.html#SEC_About" title="&Uuml;ber (Hilfe)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="gnu-free-documentation-license.de.html" title="N&auml;chstes Kapitel">&nbsp;GNU Free Documentation License &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#vocal-ensembles" title="Voriger Abschnitt in Lesereihenfolge" accesskey="p" rel="previous"> &lt; &nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#vocal-ensembles" title="Abschnitt nach oben" accesskey="u" rel="up">&nbsp; Nach oben :&nbsp;Vokalensemble&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="orchestral-templates.de.html" title="N&auml;chster Abschnitt in Lesereihenfolge" accesskey="n" rel="next">&nbsp;Orchestervorlage &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-stable-2.18/scripts/build/out/www_post -->
+<p class="footer_version">
+Diese Seite ist für LilyPond-2.18.2 (stabiler Zweig).
+</p>
+<p class="footer_report">
+Ihre Hilfe ist willkommen. Bitte <a href="http://lilypond.org/help-us.html">helfen Sie</a> uns, indem Sie Probleme und Fehler an unsere <a·href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">Fehler-Liste</a> schicken.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-stable-2.18/scripts/build/out/www_post -->
+ Andere Sprachen: <a href="vocal-ensembles.cs.html">česky</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.de.html"
+         title="Documentation Index">&lt;&lt; Zur Dokumentationsübersicht</a></p>
+<h4 class="toc_header"> <a href="index.de.html" title="Start of the manual">LilyPond &ndash; Learning Manual  v2.18.2 (stabiler Zweig). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Ubung" href="tutorial.de.html">1. Übung</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Wie-werden-Eingabe_002dDateien-geschrieben-1" href="how-to-write-input-files.de.html">1.1 Wie werden Eingabe-Dateien geschrieben</a>    </li>
+    <li class=""><a name="toc-Mit-Fehlern-umgehen-1" href="dealing-with-errors.de.html">1.2 Mit Fehlern umgehen</a>    </li>
+    <li class=""><a name="toc-Wie-die-Handbucher-gelesen-werden-sollen" href="how-to-read-the-manuals.de.html">1.3 Wie die Handbücher gelesen werden sollen</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Ubliche-Notation" href="common-notation.de.html">2. Übliche Notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Notation-auf-einem-System-1" href="single-staff-notation.de.html">2.1 Notation auf einem System</a>    </li>
+    <li class=""><a name="toc-Mehrere-Noten-auf-einmal-1" href="multiple-notes-at-once.de.html">2.2 Mehrere Noten auf einmal</a>    </li>
+    <li class=""><a name="toc-Lieder-1" href="songs.de.html">2.3 Lieder</a>    </li>
+    <li class=""><a name="toc-Letzter-Schliff-1" href="final-touches.de.html">2.4 Letzter Schliff</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Grundbegriffe-1" href="fundamental-concepts.de.html">3. Grundbegriffe</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Wie-eine-LilyPond_002dEingabe_002dDatei-funktioniert-1" href="how-lilypond-input-files-work.de.html">3.1 Wie eine LilyPond-Eingabe-Datei funktioniert</a>    </li>
+    <li class=""><a name="toc-Voice-enthalt-Noten" href="voices-contain-music.de.html">3.2 Voice enthält Noten</a>    </li>
+    <li class=""><a name="toc-Kontexte-und-Engraver-1" href="contexts-and-engravers.de.html">3.3 Kontexte und Engraver</a>    </li>
+    <li class=""><a name="toc-Erweiterung-der-Beispiele-1" href="extending-the-templates.de.html">3.4 Erweiterung der Beispiele</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Die-Ausgabe-verandern" href="tweaking-output.de.html">4. Die Ausgabe verändern</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grundlagen-fur-die-Optimierung" href="tweaking-basics.de.html">4.1 Grundlagen für die Optimierung</a>    </li>
+    <li class=""><a name="toc-Die-Referenz-der-Programminterna-1" href="the-internals-reference-manual.de.html">4.2 Die Referenz der Programminterna</a>    </li>
+    <li class=""><a name="toc-Erscheinung-von-Objekten-1" href="appearance-of-objects.de.html">4.3 Erscheinung von Objekten</a>    </li>
+    <li class=""><a name="toc-Positionierung-von-Objekten-1" href="placement-of-objects.de.html">4.4 Positionierung von Objekten</a>    </li>
+    <li class=""><a name="toc-Kollision-von-Objekten-1" href="collisions-of-objects.de.html">4.5 Kollision von Objekten</a>    </li>
+    <li class=""><a name="toc-Weitere-Optimierungen-1" href="further-tweaking.de.html">4.6 Weitere Optimierungen</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Vorlagen-1" href="templates.de.html">A. Vorlagen</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Ein-einzelnes-System-1" href="single-staff.de.html">A.1 Ein einzelnes System</a>    </li>
+    <li class=""><a name="toc-Klaviervorlagen-1" href="piano-templates.de.html">A.2 Klaviervorlagen</a>    </li>
+    <li class=""><a name="toc-Streichquartett-1" href="string-quartet.de.html">A.3 Streichquartett</a>    </li>
+    <li class=" toc_current"><a name="toc-Vokalensemble-1" href="vocal-ensembles.de.html">A.4 Vokalensemble</a>
+    <ul class="toc">
+      <li class=" toc_current"><a name="toc-SATB_002dPartitur" href="vocal-ensembles.de.html">A.4.1 SATB-Partitur</a>      </li>
+      <li class=" toc_current"><a name="toc-SATB_002dPartitur-und-automatischer-Klavierauszug" href="vocal-ensembles.de.html">A.4.2 SATB-Partitur und automatischer Klavierauszug</a>      </li>
+      <li class=" toc_current"><a name="toc-SATB-mit-daran-ausgerichteten-Kontexten" href="vocal-ensembles.de.html">A.4.3 SATB mit daran ausgerichteten Kontexten</a>      </li>
+      <li class=" toc_current"><a name="toc-SATB-auf-vier-Systemen" href="vocal-ensembles.de.html">A.4.4 SATB auf vier Systemen</a>      </li>
+      <li class=" toc_current"><a name="toc-Sologesang-und-zweistimmiger-Refrain" href="vocal-ensembles.de.html">A.4.5 Sologesang und zweistimmiger Refrain</a>      </li>
+      <li class=" toc_current"><a name="toc-Hymnen" href="vocal-ensembles.de.html">A.4.6 Hymnen</a>      </li>
+      <li class=" toc_current"><a name="toc-Psalmengesang" href="vocal-ensembles.de.html">A.4.7 Psalmengesang</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Orchestervorlage-1" href="orchestral-templates.de.html">A.5 Orchestervorlage</a>    </li>
+    <li class=""><a name="toc-Vorlagen-fur-alte-Notation" href="ancient-notation-templates.de.html">A.6 Vorlagen für alte Notation</a>    </li>
+    <li class=""><a name="toc-Andere-Vorlagen-1" href="other-templates.de.html">A.7 Andere Vorlagen</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.de.html">B. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-LilyPond_002dIndex-1" href="lilypond-index.de.html">C. LilyPond-Index</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: ebe492ca408fb0d9abf80b94c56197eef8dc2f09
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<!--
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.18 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.18 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.18 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Mit Google suchen">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Suche">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

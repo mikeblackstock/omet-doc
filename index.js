@@ -13,7 +13,7 @@ const register = (core, args, options, metadata) => {
   	},
  
     title: metadata.title.en_EN,
-    dimension: {width: 400, height:400},
+    dimension: {width: 700, height:500},
     position: 'center'
   })
   .on('destroy', () => proc.destroy())
@@ -27,7 +27,7 @@ const register = (core, args, options, metadata) => {
     const iframe = document.createElement('iframe');
     iframe.style.width = '100%';
     iframe.style.height = '100%';
-    iframe.src = proc.resource('/data/index.html') + suffix;
+    iframe.src = proc.resource('/data/html/Documentation/learning/tutorial.html');
     iframe.setAttribute('border', '0');
 
     // Bind window events to iframe
@@ -40,7 +40,10 @@ const register = (core, args, options, metadata) => {
     win.on('iframe:get', msg => {
       proc.send(msg);
     });
+    proc.on('attention', (param) => {
 
+        iframe.src= proc.resource('/data/html/Documentation/' + param);
+    });
     $content.appendChild(iframe);
   });
   return proc;
