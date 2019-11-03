@@ -27,7 +27,7 @@ const register = (core, args, options, metadata) => {
     const iframe = document.createElement('iframe');
     iframe.style.width = '100%';
     iframe.style.height = '100%';
-    iframe.src = proc.resource('/data/html/Documentation/learning/tutorial.html');
+    iframe.src = proc.resource('/data/html/Documentation/learning/simple-notation.html');
     iframe.setAttribute('border', '0');
 
     // Bind window events to iframe
@@ -41,8 +41,10 @@ const register = (core, args, options, metadata) => {
       proc.send(msg);
     });
     proc.on('attention', (param) => {
+        let tmp= param.split("#");
 
-        iframe.src= proc.resource('/data/html/Documentation/' + param);
+        iframe.src= proc.resource('/data/html/Documentation/' + tmp[0] + "#" + tmp[1]);
+console.log(iframe.src);
     });
     $content.appendChild(iframe);
   });
