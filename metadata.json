@@ -1,9 +1,10 @@
 {
   "type": "application",
   "name": "DocViewer",
-  "category": "development",
+  "category": "Projects",
   "server": null,
   "singleton": true,
+   "hidden": true, 
   "title": {
     "en_EN": "DocViewer"
   },
